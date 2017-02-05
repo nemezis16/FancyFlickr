@@ -9,20 +9,6 @@
 import UIKit
 import Alamofire
 
-struct ParameterKey {
-    static let apiKey = "api_key"
-    static let permsKey = "perms"
-    static let apiSigKey = "api_sig"
-    static let frob = "frob"
-
-}
-
-enum Permission: String {
-    case Write = "write"
-    case Read = "read"
-    case Delete = "delete"
-}
-
 class AuthWebViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
@@ -32,21 +18,7 @@ class AuthWebViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(onCallbackNotificationTriggered(notification:)), name: NSNotification.Name.OnFlickrAuthCallback, object: nil)
         
-        
-        let url = URL(string: FlickrAPIConstants.endpoint + "/" + FlickrAPIConstants.authQueryItemKey + "/")!
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        
-        let apiSig = FlickrAPIConstants.secret +
-            ParameterKey.apiKey + FlickrAPIConstants.key +
-            ParameterKey.permsKey + Permission.Read.rawValue
-        let apiSigEncrypted = apiSig.md5
-        
-        let parameters: [String : String] = [ParameterKey.apiKey : FlickrAPIConstants.key,
-                          ParameterKey.permsKey : Permission.Read.rawValue,
-                          ParameterKey.apiSigKey : apiSigEncrypted!]
-        request = try! URLEncoding.default.encode(request, with: parameters)
-        
-        webView.loadRequest(request)
+        webView.loadRequest(AuthRequest().flickrAuthRequest())
     }
     
 //MARK: - Notifications
@@ -55,12 +27,29 @@ class AuthWebViewController: UIViewController {
         guard let url = notification.object as? URL else {
             return
         }
-        
-        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems
-        let frobQueryItem = queryItems?.filter({$0.name == ParameterKey.frob}).first
-        let frob = frobQueryItem?.value
+        let request = GetTokenRequest().flickrGetTokenRequest(from: url)
+        Alamofire.request(request).responseJSON { response in
+            if let JSON = response.result.value as? [String : Any] {
+                print("JSON: \(JSON)")
+                
+                guard let auth = JSON["auth"] as? [String : Any] else {
+                    return
+                }
+                guard let token = auth["token"] as? [String : Any] else {
+                    return
+                }
+                guard let tokenContent = token["_content"] as? String else {
+                    return
+                }
+                CredentialsProvider.token = tokenContent
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let controller = storyboard.instantiateInitialViewController() {
+                    self.present(controller, animated: true, completion: nil)
+                }
+            }
+        }
     }
-    
 }
 
 extension AuthWebViewController: UIWebViewDelegate {

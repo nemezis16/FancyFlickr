@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		737405D1D79915053D321F81 /* Pods_FancyFlickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D536AEF473A459AA7AEA04FF /* Pods_FancyFlickr.framework */; };
+		A335CEB31E47CEB70091274A /* GetSinglePhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335CEB21E47CEB70091274A /* GetSinglePhotoRequest.swift */; };
+		A335CEB71E47E9960091274A /* ImageGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335CEB61E47E9960091274A /* ImageGridCollectionViewCell.swift */; };
 		A3AD46CE1E460095009AE96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46B71E460095009AE96D /* AppDelegate.swift */; };
 		A3AD46D51E4601DF009AE96D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3AD46D41E4601DF009AE96D /* Images.xcassets */; };
 		A3AD46D81E460320009AE96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD46D61E460320009AE96D /* LaunchScreen.storyboard */; };
@@ -20,11 +22,17 @@
 		A3AD46E81E4683B1009AE96D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46E71E4683B1009AE96D /* Utils.swift */; };
 		A3AD46EE1E4699FB009AE96D /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46ED1E4699FB009AE96D /* String+MD5.swift */; };
 		A3AD46F01E46A852009AE96D /* AppNotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46EF1E46A852009AE96D /* AppNotificationNames.swift */; };
-		A3AD46F21E46A971009AE96D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46F11E46A971009AE96D /* NetworkRequest.swift */; };
+		A3AD47381E476B4D009AE96D /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD47371E476B4D009AE96D /* AuthRequest.swift */; };
+		A3AD473A1E476CC6009AE96D /* GetTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD47391E476CC6009AE96D /* GetTokenRequest.swift */; };
+		A3AD473D1E47725B009AE96D /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD473C1E47725B009AE96D /* CredentialsProvider.swift */; };
+		A3AD47401E47A1BE009AE96D /* ImageGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD473F1E47A1BE009AE96D /* ImageGridViewController.swift */; };
+		A3AD47421E47BE52009AE96D /* GetPhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD47411E47BE52009AE96D /* GetPhotosRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		51111BB1E308EF4158DA044D /* Pods-FancyFlickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FancyFlickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FancyFlickr/Pods-FancyFlickr.debug.xcconfig"; sourceTree = "<group>"; };
+		A335CEB21E47CEB70091274A /* GetSinglePhotoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSinglePhotoRequest.swift; path = Requests/GetSinglePhotoRequest.swift; sourceTree = "<group>"; };
+		A335CEB61E47E9960091274A /* ImageGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageGridCollectionViewCell.swift; path = Main/ImageGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3AD46A11E45F336009AE96D /* FancyFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FancyFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AD46B71E460095009AE96D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3AD46C51E460095009AE96D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +48,11 @@
 		A3AD46E91E46842E009AE96D /* FancyFlickr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FancyFlickr-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3AD46ED1E4699FB009AE96D /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		A3AD46EF1E46A852009AE96D /* AppNotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotificationNames.swift; path = Constants/AppNotificationNames.swift; sourceTree = "<group>"; };
-		A3AD46F11E46A971009AE96D /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		A3AD47371E476B4D009AE96D /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		A3AD47391E476CC6009AE96D /* GetTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTokenRequest.swift; sourceTree = "<group>"; };
+		A3AD473C1E47725B009AE96D /* CredentialsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsProvider.swift; sourceTree = "<group>"; };
+		A3AD473F1E47A1BE009AE96D /* ImageGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageGridViewController.swift; path = Main/ImageGridViewController.swift; sourceTree = "<group>"; };
+		A3AD47411E47BE52009AE96D /* GetPhotosRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPhotosRequest.swift; path = Requests/GetPhotosRequest.swift; sourceTree = "<group>"; };
 		BE29E6FEEDEBAB2402F3CC90 /* Pods-FancyFlickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FancyFlickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-FancyFlickr/Pods-FancyFlickr.release.xcconfig"; sourceTree = "<group>"; };
 		D536AEF473A459AA7AEA04FF /* Pods_FancyFlickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FancyFlickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -57,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A335CEB41E47E9680091274A /* ImageGridViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3AD473F1E47A1BE009AE96D /* ImageGridViewController.swift */,
+				A335CEB61E47E9960091274A /* ImageGridCollectionViewCell.swift */,
+			);
+			name = ImageGridViewController;
+			sourceTree = "<group>";
+		};
 		A3AD46981E45F336009AE96D = {
 			isa = PBXGroup;
 			children = (
@@ -91,19 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				A3AD46B71E460095009AE96D /* AppDelegate.swift */,
-				A3AD46B91E460095009AE96D /* Managers */,
 				A3AD46BA1E460095009AE96D /* MVC */,
 				A3AD46BE1E460095009AE96D /* Networking */,
 				A3AD46BF1E460095009AE96D /* SupportingClasses */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		A3AD46B91E460095009AE96D /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		A3AD46BA1E460095009AE96D /* MVC */ = {
@@ -142,8 +155,8 @@
 		A3AD46BE1E460095009AE96D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A3AD473E1E4772C2009AE96D /* Requests */,
 				A3AD46E31E461042009AE96D /* NetworkFacade.swift */,
-				A3AD46F11E46A971009AE96D /* NetworkRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -151,17 +164,10 @@
 		A3AD46BF1E460095009AE96D /* SupportingClasses */ = {
 			isa = PBXGroup;
 			children = (
-				A3AD46C01E460095009AE96D /* Utils */,
+				A3AD46E71E4683B1009AE96D /* Utils.swift */,
+				A3AD473C1E47725B009AE96D /* CredentialsProvider.swift */,
 			);
 			path = SupportingClasses;
-			sourceTree = "<group>";
-		};
-		A3AD46C01E460095009AE96D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				A3AD46E71E4683B1009AE96D /* Utils.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		A3AD46C11E460095009AE96D /* Resources */ = {
@@ -220,6 +226,7 @@
 		A3AD46DD1E4603DE009AE96D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A335CEB41E47E9680091274A /* ImageGridViewController */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -231,6 +238,26 @@
 				A3AD46EF1E46A852009AE96D /* AppNotificationNames.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		A3AD47341E474E3D009AE96D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A3AD47371E476B4D009AE96D /* AuthRequest.swift */,
+				A3AD47391E476CC6009AE96D /* GetTokenRequest.swift */,
+			);
+			name = Authentication;
+			path = Requests/Authentication;
+			sourceTree = "<group>";
+		};
+		A3AD473E1E4772C2009AE96D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A335CEB21E47CEB70091274A /* GetSinglePhotoRequest.swift */,
+				A3AD47411E47BE52009AE96D /* GetPhotosRequest.swift */,
+				A3AD47341E474E3D009AE96D /* Authentication */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 		F700063848E109FB4136CC39 /* Frameworks */ = {
@@ -375,14 +402,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3AD47401E47A1BE009AE96D /* ImageGridViewController.swift in Sources */,
+				A3AD473D1E47725B009AE96D /* CredentialsProvider.swift in Sources */,
 				A3AD46E41E461042009AE96D /* NetworkFacade.swift in Sources */,
+				A3AD47421E47BE52009AE96D /* GetPhotosRequest.swift in Sources */,
+				A335CEB71E47E9960091274A /* ImageGridCollectionViewCell.swift in Sources */,
 				A3AD46F01E46A852009AE96D /* AppNotificationNames.swift in Sources */,
 				A3AD46DF1E46040F009AE96D /* AuthViewController.swift in Sources */,
+				A3AD47381E476B4D009AE96D /* AuthRequest.swift in Sources */,
 				A3AD46EE1E4699FB009AE96D /* String+MD5.swift in Sources */,
 				A3AD46E21E46047B009AE96D /* FlickrAPIConstants.swift in Sources */,
+				A335CEB31E47CEB70091274A /* GetSinglePhotoRequest.swift in Sources */,
 				A3AD46E61E4677F2009AE96D /* AuthWebViewController.swift in Sources */,
 				A3AD46CE1E460095009AE96D /* AppDelegate.swift in Sources */,
-				A3AD46F21E46A971009AE96D /* NetworkRequest.swift in Sources */,
+				A3AD473A1E476CC6009AE96D /* GetTokenRequest.swift in Sources */,
 				A3AD46E81E4683B1009AE96D /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

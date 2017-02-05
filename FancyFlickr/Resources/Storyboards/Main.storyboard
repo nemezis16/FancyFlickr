@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DhP-QM-ZGz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Image Grid View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ImageGridViewController" id="BYZ-38-t0r" customClass="ImageGridViewController" customModule="FancyFlickr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,11 +19,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdF-Qg-M88">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2n9-Ii-OTl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TeL-5Z-pAm">
+                                            <size key="itemSize" width="84" height="79"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageGridCollectionViewCell" id="Cpu-vw-P7w" customClass="ImageGridCollectionViewCell" customModule="FancyFlickr" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="79"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-W6-T0u">
+                                                            <rect key="frame" x="0.0" y="0.0" width="84" height="79"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="H8a-W6-T0u" secondAttribute="bottom" id="0Y8-pG-Y3t"/>
+                                                    <constraint firstItem="H8a-W6-T0u" firstAttribute="leading" secondItem="Cpu-vw-P7w" secondAttribute="leading" id="0nE-li-ZbH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="H8a-W6-T0u" secondAttribute="trailing" id="cxs-jm-Yin"/>
+                                                    <constraint firstItem="H8a-W6-T0u" firstAttribute="top" secondItem="Cpu-vw-P7w" secondAttribute="top" id="y6K-CT-X5W"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="gridImageView" destination="H8a-W6-T0u" id="SP6-uE-NWn"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="HvT-9i-PWN"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="srK-rd-7Kr"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2n9-Ii-OTl" secondAttribute="trailing" id="4AN-lW-5uN"/>
+                                    <constraint firstAttribute="bottom" secondItem="2n9-Ii-OTl" secondAttribute="bottom" id="6At-YN-Df2"/>
+                                    <constraint firstItem="2n9-Ii-OTl" firstAttribute="top" secondItem="cdF-Qg-M88" secondAttribute="top" id="SNs-98-3Cj"/>
+                                    <constraint firstItem="2n9-Ii-OTl" firstAttribute="leading" secondItem="cdF-Qg-M88" secondAttribute="leading" id="ipz-gz-Dqa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cdF-Qg-M88" secondAttribute="bottom" id="18A-lj-8hb"/>
+                            <constraint firstItem="cdF-Qg-M88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G7W-m4-Bju"/>
+                            <constraint firstItem="cdF-Qg-M88" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JxO-eA-dtD"/>
+                            <constraint firstAttribute="trailing" secondItem="cdF-Qg-M88" secondAttribute="trailing" id="yaR-RL-Fjc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JWq-ar-TrP"/>
+                    <connections>
+                        <outlet property="imageGridCollectionView" destination="2n9-Ii-OTl" id="cQq-lW-hbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1020" y="111.99400299850076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lpa-sp-h19">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DhP-QM-ZGz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QdR-dW-STI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OSx-Zb-SWb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFQ-Mq-T6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80.799999999999997" y="111.99400299850076"/>
         </scene>
     </scenes>
 </document>

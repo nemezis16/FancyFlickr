@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3FP-8W-qOH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="HgM-H3-pFY">
+            <objects>
+                <viewController id="3FP-8W-qOH" customClass="AuthViewController" customModule="FancyFlickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IZ2-Tx-y0U"/>
+                        <viewControllerLayoutGuide type="bottom" id="A0d-l4-zTo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="67r-Zt-xcL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD7-2o-JRX">
+                                <rect key="frame" x="166" y="318.5" width="43" height="30"/>
+                                <state key="normal" title="SignIn"/>
+                                <connections>
+                                    <action selector="handleSignInTap:" destination="3FP-8W-qOH" eventType="touchUpInside" id="Mbp-o7-qZm"/>
+                                    <segue destination="Xfc-KJ-Pd7" kind="show" id="Jve-vB-6HU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zD7-2o-JRX" firstAttribute="centerY" secondItem="67r-Zt-xcL" secondAttribute="centerY" id="aiq-cV-LFt"/>
+                            <constraint firstItem="zD7-2o-JRX" firstAttribute="centerX" secondItem="67r-Zt-xcL" secondAttribute="centerX" id="qq7-ag-qQO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzy-MM-dAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="-117"/>
+        </scene>
+        <!--Auth Web View Controller-->
+        <scene sceneID="cm7-Hr-a1e">
+            <objects>
+                <viewController id="Xfc-KJ-Pd7" customClass="AuthWebViewController" customModule="FancyFlickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DQv-UN-B9u"/>
+                        <viewControllerLayoutGuide type="bottom" id="ikK-Vq-jtM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8xP-1F-KDT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-aa-Obg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Xfc-KJ-Pd7" id="8mG-IK-tFF"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ikK-Vq-jtM" firstAttribute="top" secondItem="Otc-aa-Obg" secondAttribute="bottom" id="E6c-j3-ufq"/>
+                            <constraint firstItem="Otc-aa-Obg" firstAttribute="top" secondItem="8xP-1F-KDT" secondAttribute="top" id="Ks4-Y5-7aZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Otc-aa-Obg" secondAttribute="trailing" id="SwX-Na-3VC"/>
+                            <constraint firstItem="Otc-aa-Obg" firstAttribute="leading" secondItem="8xP-1F-KDT" secondAttribute="leading" id="hr0-Bl-MFS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Otc-aa-Obg" id="5wv-Cn-i5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDe-JN-nLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069.5999999999999" y="-117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>

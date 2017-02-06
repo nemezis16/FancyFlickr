@@ -10,6 +10,7 @@
 		737405D1D79915053D321F81 /* Pods_FancyFlickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D536AEF473A459AA7AEA04FF /* Pods_FancyFlickr.framework */; };
 		A335CEB31E47CEB70091274A /* GetSinglePhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335CEB21E47CEB70091274A /* GetSinglePhotoRequest.swift */; };
 		A335CEB71E47E9960091274A /* ImageGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335CEB61E47E9960091274A /* ImageGridCollectionViewCell.swift */; };
+		A335CEB91E4878E10091274A /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335CEB81E4878E10091274A /* PinterestLayout.swift */; };
 		A3AD46CE1E460095009AE96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD46B71E460095009AE96D /* AppDelegate.swift */; };
 		A3AD46D51E4601DF009AE96D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3AD46D41E4601DF009AE96D /* Images.xcassets */; };
 		A3AD46D81E460320009AE96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD46D61E460320009AE96D /* LaunchScreen.storyboard */; };
@@ -33,6 +34,7 @@
 		51111BB1E308EF4158DA044D /* Pods-FancyFlickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FancyFlickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FancyFlickr/Pods-FancyFlickr.debug.xcconfig"; sourceTree = "<group>"; };
 		A335CEB21E47CEB70091274A /* GetSinglePhotoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetSinglePhotoRequest.swift; path = Requests/GetSinglePhotoRequest.swift; sourceTree = "<group>"; };
 		A335CEB61E47E9960091274A /* ImageGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageGridCollectionViewCell.swift; path = Main/ImageGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		A335CEB81E4878E10091274A /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		A3AD46A11E45F336009AE96D /* FancyFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FancyFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AD46B71E460095009AE96D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3AD46C51E460095009AE96D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		A3AD46BD1E460095009AE96D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A335CEB81E4878E10091274A /* PinterestLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				A3AD46E21E46047B009AE96D /* FlickrAPIConstants.swift in Sources */,
 				A335CEB31E47CEB70091274A /* GetSinglePhotoRequest.swift in Sources */,
 				A3AD46E61E4677F2009AE96D /* AuthWebViewController.swift in Sources */,
+				A335CEB91E4878E10091274A /* PinterestLayout.swift in Sources */,
 				A3AD46CE1E460095009AE96D /* AppDelegate.swift in Sources */,
 				A3AD473A1E476CC6009AE96D /* GetTokenRequest.swift in Sources */,
 				A3AD46E81E4683B1009AE96D /* Utils.swift in Sources */,

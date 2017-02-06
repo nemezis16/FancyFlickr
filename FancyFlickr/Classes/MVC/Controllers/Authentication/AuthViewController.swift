@@ -10,11 +10,14 @@ import UIKit
 
 class AuthViewController: UIViewController {
   
+    @IBOutlet weak var signInButton: UIButton!
+    
 //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.signInButton.layer.cornerRadius = self.signInButton.frame.height / 2
     }
     
 //MARK: - Action
